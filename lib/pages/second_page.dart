@@ -1,5 +1,6 @@
 
 
+import 'package:demo/pages/thirth_page.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatefulWidget {
@@ -11,10 +12,10 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   //String dollar_sign="\$";
+  int _selectedIndex=0;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -62,7 +63,7 @@ class _SecondPageState extends State<SecondPage> {
                            height: 60,
                            child: Icon(Icons.telegram,color: Colors.blue,size: 32,),
                            decoration: BoxDecoration(
-                             color: Colors.black12,
+                             color: Colors.black12.withOpacity(0.05),
                              borderRadius: BorderRadius.circular(50)
                            ),
                          ),
@@ -87,7 +88,7 @@ class _SecondPageState extends State<SecondPage> {
                               height: 60,
                               child: Icon(Icons.upcoming_outlined,color: Colors.blue,size: 32,),
                               decoration: BoxDecoration(
-                                  color: Colors.black12,
+                                  color: Colors.black12.withOpacity(0.05),
                                   borderRadius: BorderRadius.circular(50)
                               ),
                             ),
@@ -112,7 +113,7 @@ class _SecondPageState extends State<SecondPage> {
                               height: 60,
                               child: Icon(Icons.drive_folder_upload,color: Colors.blue,size: 32,),
                               decoration: BoxDecoration(
-                                  color: Colors.black12,
+                                  color: Colors.black12.withOpacity(0.05),
                                   borderRadius: BorderRadius.circular(50)
                               ),
                             ),
@@ -137,7 +138,7 @@ class _SecondPageState extends State<SecondPage> {
                               height: 60,
                               child: Icon(Icons.note_add_rounded,color: Colors.blue,size: 32,),
                               decoration: BoxDecoration(
-                                  color: Colors.black12,
+                                  color: Colors.black12.withOpacity(0.05),
                                   borderRadius: BorderRadius.circular(50)
                               ),
                             ),
@@ -163,7 +164,7 @@ class _SecondPageState extends State<SecondPage> {
                               height: 60,
                               child: Icon(Icons.sticky_note_2_rounded,color: Colors.blue,size: 32,),
                               decoration: BoxDecoration(
-                                  color: Colors.black12,
+                                  color: Colors.black12.withOpacity(0.05),
                                   borderRadius: BorderRadius.circular(50)
                               ),
                             ),
@@ -188,7 +189,7 @@ class _SecondPageState extends State<SecondPage> {
                               height: 60,
                               child: Icon(Icons.payment_outlined,color: Colors.blue,size: 32,),
                               decoration: BoxDecoration(
-                                  color: Colors.black12,
+                                  color: Colors.black12.withOpacity(0.05),
                                   borderRadius: BorderRadius.circular(50)
                               ),
                             ),
@@ -213,7 +214,7 @@ class _SecondPageState extends State<SecondPage> {
                               height: 60,
                               child: Icon(Icons.splitscreen_rounded,color: Colors.blue,size: 32,),
                               decoration: BoxDecoration(
-                                  color: Colors.black12,
+                                  color: Colors.black12.withOpacity(0.05),
                                   borderRadius: BorderRadius.circular(50)
                               ),
                             ),
@@ -238,7 +239,7 @@ class _SecondPageState extends State<SecondPage> {
                               height: 60,
                               child: Icon(Icons.group,color: Colors.blue,size: 32,),
                               decoration: BoxDecoration(
-                                  color: Colors.black12,
+                                  color: Colors.black12.withOpacity(0.05),
                                   borderRadius: BorderRadius.circular(50)
                               ),
                             ),
@@ -276,7 +277,12 @@ class _SecondPageState extends State<SecondPage> {
                         fontWeight: FontWeight.bold,
                         fontSize: 20
                       ),),
-                      trailing: IconButton(icon: Icon(Icons.keyboard_tab,color: Colors.blue,),onPressed: (){},),
+                      trailing: IconButton(icon: Icon(Icons.keyboard_tab,color: Colors.blue,),
+                        onPressed: (){
+                        print("new page");
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ThirdthPage()));
+                        //Navigator.push(context, MaterialPageRoute(builder: (context)=>ThirdthPage()));
+                      },),
                     ),
                     ListTile(
                       title: Text("Leslie Alexander",style: TextStyle(
@@ -339,19 +345,31 @@ class _SecondPageState extends State<SecondPage> {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor:Colors.grey,
-          currentIndex:0 ,
-          items: [
+         //backgroundColor:Colors.red,
+          onTap: ( int index){
+            setState((){
+              _selectedIndex=index;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          currentIndex:_selectedIndex ,
+          selectedItemColor: Colors.blueAccent,
+          unselectedItemColor: Colors.black12,
+          unselectedLabelStyle: TextStyle(color: Colors.black),
+          items:const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home,color: Colors.black12,),label: "Home",
+              icon: Icon(Icons.home,)
+              ,label: "Home",
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home")
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_activity_outlined),
+              label: 'Activity',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.analytics),label: "Analytics"),
+            BottomNavigationBarItem(icon: Icon(Icons.note_alt_rounded),label: "Invoicing"),
+            BottomNavigationBarItem(icon: Icon(Icons.more_horiz_rounded),label: "More")
           ],
         ),
-      ),
     );
   }
 

@@ -66,6 +66,10 @@ flutter:
     - asset/001-search.png
     - asset/002-facebook.png
     - asset/003-apple.png
+    - asset/people1.webp
+    - asset/people2.jpg
+    - asset/people3.jpg
+    - asset/people4.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
