@@ -267,7 +267,7 @@ class _SecondPageState extends State<SecondPage> {
               Container(
                 //color: Colors.orange,
                 padding: EdgeInsets.only(top: 0),
-                height: 280,
+                height: 240,
                 child: ListView(
                   children: [
                     ListTile(
@@ -338,7 +338,19 @@ class _SecondPageState extends State<SecondPage> {
             ]))
           ],
         ),
-
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor:Colors.grey,
+          currentIndex:0 ,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home,color: Colors.black12,),label: "Home",
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home")
+          ],
+        ),
       ),
     );
   }
