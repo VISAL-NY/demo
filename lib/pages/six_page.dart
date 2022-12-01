@@ -15,7 +15,18 @@ class _SixPageState extends State<SixPage> {
         child: Column(
           children: [
             Expanded(child: Column(
-
+              mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                      SizedBox(
+                        child: Image.asset("asset/successful.png"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        child: Text("Successful Send!",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                      ),
+                    Text("Your money has been successfully sent to Christina Felici.",style: TextStyle(fontSize: 16,height: 1.5),textAlign: TextAlign.center,)
+                    
+                  ],
             )),
             Padding(
               padding: const EdgeInsets.all(8.0),

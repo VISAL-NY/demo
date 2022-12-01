@@ -20,8 +20,7 @@ class _ThirdthPageState extends State<ThirdthPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
+    return DefaultTabController(
         length: 2,
         child:  Scaffold(
             appBar: _buildAppbar,
@@ -69,7 +68,6 @@ class _ThirdthPageState extends State<ThirdthPage> {
               ],
             )
           ),
-        ),
     );
   }
   get _buildAppbar{
@@ -96,7 +94,7 @@ class _ThirdthPageState extends State<ThirdthPage> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      suffixIcon: Icon(Icons.speaker_phone_sharp,color: Colors.blueAccent,),
+                      suffixIcon: Icon(Icons.mic,color: Colors.blueAccent,),
                       //suffixIconColor: Colors.blueAccent
                     ),
                   ),

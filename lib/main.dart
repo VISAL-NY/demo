@@ -1,7 +1,7 @@
 
-
 import 'package:demo/pages/login_page.dart';
 import 'package:demo/pages/second_page.dart';
+import 'package:demo/pages/splash_page.dart';
 import 'package:demo/pages/thirth_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +9,13 @@ import 'package:flutter/material.dart';
 void main(){
   runApp(
     MaterialApp(
-      home:  SecondPage(),
+
+      theme: ThemeData(
+        fontFamily: "fonts/DMSans-Regular.ttf",
+        //primaryColor: Colors.red,
+        primarySwatch: Colors.blue,
+      ),
+      home: MyApp(),
     )
 
   );
@@ -20,12 +26,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SafeArea(
+    return SafeArea(
         child: Scaffold(
-          body: LoginPage(),
+          body: SplashPage(),
         ),
-      ),
     );
   }
 }
