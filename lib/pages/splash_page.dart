@@ -22,22 +22,28 @@ class _SplashPageState extends State<SplashPage> {
   }
   get _buildBody{
     return Container(
-      alignment: Alignment.center,
       child: Column(
         children: [
           Expanded(child: Container(
             alignment: Alignment.center,
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(
-                    width: 60,
-                    height: 60,
+                    width: 80,
+                    height: 80,
                     child: Image.asset("asset/logo.png",)),
-                Text("PayZa",style: TextStyle(color:Colors.black,fontWeight: FontWeight.bold,fontSize: 20),)
+                Text("PayZa",style: TextStyle(color:Color.fromRGBO(
+                    21, 41, 79, 1.0),fontWeight: FontWeight.bold,fontSize: 32),)
               ],
             ),
           )),
-          CircularProgressIndicator()
+          Padding(
+            padding: const EdgeInsets.only(bottom: 40),
+            child: CircularProgressIndicator(
+              strokeWidth: 4,
+            ),
+          )
 
         ],
       )
