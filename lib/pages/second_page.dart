@@ -49,24 +49,22 @@ class _SecondPageState extends State<SecondPage> {
                 ),
                 ),
             SliverList(delegate: SliverChildListDelegate([
-              Container(
-                height:MediaQuery.of(context).size.height*0.3,
-                //color:Colors.red,
-                child: GridView.count(
-                    mainAxisSpacing:0.4,
-                    crossAxisCount: 4,
-                    children: [
-                      _buildMenu(Icons.telegram, "Send"),
-                     _buildMenu(Icons.upcoming_outlined, "Request"),
-                     _buildMenu(Icons.drive_folder_upload, "Transfer"),
-                      _buildMenu(Icons.note_add_rounded, "Create"),
+              GridView.count(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  mainAxisSpacing:0.4,
+                  crossAxisCount: 4,
+                  children: [
+                    _buildMenu(Icons.telegram, "Send"),
+                   _buildMenu(Icons.upcoming_outlined, "Request"),
+                   _buildMenu(Icons.drive_folder_upload, "Transfer"),
+                    _buildMenu(Icons.note_add_rounded, "Create"),
 
-                     _buildMenu(Icons.sticky_note_2_rounded, "Send a Message"),
-                     _buildMenu(Icons.payment_outlined, "Pay Bills"),
-                      _buildMenu(Icons.splitscreen_rounded, "Splite the"),
-                      _buildMenu(Icons.group, "Share Contact"),
-                  ],
-                ),
+                   _buildMenu(Icons.sticky_note_2_rounded, "Send a Message"),
+                   _buildMenu(Icons.payment_outlined, "Pay Bills"),
+                    _buildMenu(Icons.splitscreen_rounded, "Splite the"),
+                    _buildMenu(Icons.group, "Share Contact"),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 15,right: 15),
@@ -74,32 +72,29 @@ class _SecondPageState extends State<SecondPage> {
                     thickness: 1,
                 ),
               ),
-              Container(
-                //color: Colors.orange,
-                padding: EdgeInsets.only(top: 0),
-                height: MediaQuery.of(context).size.height*0.35,
-                child: ListView(
-                  children: [
-                    ListTile(
-                      title: Text("Recently Activity",style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16
-                      ),),
-                      trailing: IconButton(icon: Icon(Icons.keyboard_tab,color: Colors.blue,),
-                        onPressed: (){
-                        print("new page");
-                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ThirdthPage()));
-                        //Navigator.push(context, MaterialPageRoute(builder: (context)=>ThirdthPage()));
-                      },),
-                    ),
-                    _listTile("Leslie Alexander", "Preapproved Payment - Completed", "+ \$129.5",Colors.green),
-                    _listTile("Sovannah Nguyen", "Transfer Bank - Completed", "- \$47.5",Colors.red),
-                    _listTile("Cameron Williamson", "Preapproved Payment - Completed", "+ \$86.5",Colors.green),
-                    _listTile("Dianne Russell", "Transfer Bank - Completed", " - \$66.5",Colors.red),
+              ListView(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                children: [
+                  ListTile(
+                    title: Text("Recently Activity",style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16
+                    ),),
+                    trailing: IconButton(icon: Icon(Icons.keyboard_tab,color: Colors.blue,),
+                      onPressed: (){
+                      print("new page");
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ThirdthPage()));
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>ThirdthPage()));
+                    },),
+                  ),
+                  _listTile("Leslie Alexander", "Preapproved Payment - Completed", "+ \$129.5",Colors.green),
+                  _listTile("Sovannah Nguyen", "Transfer Bank - Completed", "- \$47.5",Colors.red),
+                  _listTile("Cameron Williamson", "Preapproved Payment - Completed", "+ \$86.5",Colors.green),
+                  _listTile("Dianne Russell", "Transfer Bank - Completed", " - \$66.5",Colors.red),
 
-                  ],
-                ),
+                ],
               ),
             ]))
           ],
