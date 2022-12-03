@@ -1,4 +1,5 @@
 import 'package:demo/pages/four_page.dart';
+import 'package:demo/pages/list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/model/people.dart';
 
@@ -13,10 +14,10 @@ class _ThirdthPageState extends State<ThirdthPage> {
   bool _favoriteselected=true;
   int _selected=0;
   List<People> peoplelist=[
-    People("Christian Dawson", "christian_dawson@gmail.com", "asset/people1.webp"),
-    People("Christian Edward", "christian_edward@gmail.com", "asset/people2.jpg"),
-    People("Christiana Harison", "christian_harison@gmail.com", "asset/people3.jpg"),
-    People("Christianita Felicia", "christian_felicia@gmail.com", "asset/people4.jpg")
+    People.create("Christian Dawson", "christian_dawson@gmail.com", "asset/people1.webp"),
+    People.create("Christian Edward", "christian_edward@gmail.com", "asset/people2.jpg"),
+    People.create("Christiana Harison", "christian_harison@gmail.com", "asset/people3.jpg"),
+    People.create("Christianita Felicia", "christian_felicia@gmail.com", "asset/people4.jpg")
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,34 +33,7 @@ class _ThirdthPageState extends State<ThirdthPage> {
                       itemBuilder: (context,index){
                         return Padding(
                           padding: const EdgeInsets.only(left: 8,right: 8,top: 6),
-                          child: InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>FourPage()));
-                            },
-                            child: ListTile(
-                              leading: ClipRRect(
-                                borderRadius: BorderRadius.circular(100),
-                                child: Container(
-                                  color: Colors.blueAccent,
-                                  width: 60,
-                                  height: 60,
-                                  child: Image.asset(peoplelist[index].image,fit: BoxFit.cover,),
-                                ),
-                              ),
-                              title: Text(peoplelist[index].name,style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),),
-                              subtitle: Padding(
-                                padding: const EdgeInsets.only(top: 3),
-                                child: Text(peoplelist[index].email,style: TextStyle(fontSize: 12),maxLines: 1,softWrap: false,overflow: TextOverflow.ellipsis,),
-                              ),
-                              trailing: IconButton(icon:Icon(Icons.favorite_border_outlined),
-                              onPressed: (){
-                                // setState((){
-                                //   // _favoriteselected=!_favoriteselected;
-                                //   // print("people${peoplelist[index]}");
-                                // });
-                              },),
-                            ),
-                          ),
+                            child: ListItem(peoplelist[index].name,peoplelist[index].email,peoplelist[index].image),
                         );
                       }
                   ),

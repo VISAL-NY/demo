@@ -2,7 +2,11 @@ import 'package:demo/pages/five_page.dart';
 import 'package:flutter/material.dart';
 
 class FourPage extends StatefulWidget {
-  const FourPage({Key? key}) : super(key: key);
+  //const FourPage({Key? key}) : super(key: key);
+  String name;
+  String email;
+  String image;
+  FourPage(this.name,this.email,this.image);
 
   @override
   State<FourPage> createState() => _FourPageState();
@@ -32,13 +36,13 @@ class _FourPageState extends State<FourPage> {
                                  color: Colors.blueAccent,
                                  width: 60,
                                  height: 60,
-                                 child: Image.asset("asset/people1.webp",fit: BoxFit.cover,),
+                                 child: Image.asset(widget.image,fit: BoxFit.cover,),
                                ),
                              ),
-                             title: Text("Christian Dawson",style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+                             title: Text(widget.name,style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
                              subtitle: Padding(
                                padding: const EdgeInsets.only(top: 3),
-                               child: Text("christian_dawson@gmail.com",style: TextStyle(fontSize: 13),maxLines: 1,softWrap: false,overflow: TextOverflow.ellipsis,),
+                               child: Text(widget.email,style: TextStyle(fontSize: 13),maxLines: 1,softWrap: false,overflow: TextOverflow.ellipsis,),
                              ),
                              trailing: IconButton(icon:Icon(Icons.edit_outlined,color: Colors.blueAccent,),
                                onPressed: (){
@@ -102,7 +106,7 @@ class _FourPageState extends State<FourPage> {
                       child: ElevatedButton(
                         child: Text("Continue"),
                         onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>FivePage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>FivePage(widget.name,widget.email,widget.image)));
                         },
                       ),
                     ),

@@ -2,7 +2,12 @@ import 'package:demo/pages/six_page.dart';
 import 'package:flutter/material.dart';
 
 class FivePage extends StatefulWidget {
-  const FivePage({Key? key}) : super(key: key);
+  //const FivePage({Key? key}) : super(key: key);
+  String name;
+  String email;
+  String image;
+
+  FivePage(this.name,this.email,this.image);
 
   @override
   State<FivePage> createState() => _FivePageState();
@@ -37,17 +42,17 @@ class _FivePageState extends State<FivePage> {
                          child: Container(
                            width: 80,
                            height: 80,
-                           child: Image.asset("asset/people1.webp",fit: BoxFit.cover,),
+                           child: Image.asset(widget.image,fit: BoxFit.cover,),
                          ),
                        ),
                      ),
                      Container(
-                       child: Text("Cristina Felici",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),),
+                       child: Text(widget.name,style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),),
                      ),
                      Padding(
                        padding: const EdgeInsets.all(8.0),
                        child: Container(
-                         child: Text("cristina_felici@gmail.com",style: TextStyle(color: Colors.black,fontSize: 16),),
+                         child: Text(widget.email,style: TextStyle(color: Colors.black,fontSize: 16),),
                        ),
                      ),
                      Padding(

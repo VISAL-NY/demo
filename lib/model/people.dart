@@ -1,9 +1,11 @@
 
 
 class People{
-  final String name;
-  final String email;
-  final String image;
+  String name="";
+  String email="";
+  String image="";
 
-  People(this.name, this.email, this.image);
+  People();
+  People.create(this.name,this.email,this.image);
+
 }
