@@ -1,5 +1,6 @@
 import 'package:demo/pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:loading_animations/loading_animations.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3),()=>Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LoginPage())));
+    Future.delayed(Duration(seconds: 2),()=>Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LoginPage())));
   }
   @override
   Widget build(BuildContext context) {
@@ -40,9 +41,11 @@ class _SplashPageState extends State<SplashPage> {
           )),
           Padding(
             padding: const EdgeInsets.only(bottom: 40),
-            child: CircularProgressIndicator(
-              strokeWidth: 4,
-            ),
+            child: LoadingBouncingLine.circle(
+              size: 60,
+              duration: Duration(seconds: 3),
+              backgroundColor: Colors.blueAccent,
+            )
           )
 
         ],

@@ -17,35 +17,33 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: CustomScrollView(
+          physics:const BouncingScrollPhysics(),
           slivers: [
             SliverAppBar(
               expandedHeight: MediaQuery.of(context).size.height*0.2,
+              pinned: true,
+              //floating: true,
               leading: Container(
                 width: 20,
                 height: 20,
                 child: Image.asset("asset/logo.png"),
               ),
               actions: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.document_scanner_sharp,color: Colors.white,)),
-                IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none,color: Colors.white,))
+                IconButton(onPressed: (){}, icon:const Icon(Icons.document_scanner_sharp,color: Colors.white,)),
+                IconButton(onPressed: (){}, icon:const Icon(Icons.notifications_none,color: Colors.white,))
               ],
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                title: Container(
-                  margin: EdgeInsets.all(10),
-                  //width: 20,
-                  //color: Colors.black,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text("\$9,479.25"),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Text("Balance Available",style: TextStyle(fontSize: 8),),
-                      )
-                    ],
-                  )
-                  ),
+                title: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const[
+                    Text("\$9,479.25"),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Text("Balance Available",style: TextStyle(fontSize: 8),),
+                    )
+                  ],
+                ),
                 ),
                 ),
             SliverList(delegate: SliverChildListDelegate([
@@ -66,8 +64,8 @@ class _SecondPageState extends State<SecondPage> {
                     _buildMenu(Icons.group, "Share Contact"),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
+              const Padding(
+                padding:EdgeInsets.only(left: 15,right: 15),
                 child: Divider(
                     thickness: 1,
                 ),
@@ -77,7 +75,7 @@ class _SecondPageState extends State<SecondPage> {
                 shrinkWrap: true,
                 children: [
                   ListTile(
-                    title: Text("Recently Activity",style: TextStyle(
+                    title:const Text("Recently Activity",style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 16
@@ -92,6 +90,9 @@ class _SecondPageState extends State<SecondPage> {
                   _listTile("Leslie Alexander", "Preapproved Payment - Completed", "+ \$129.5",Colors.green),
                   _listTile("Sovannah Nguyen", "Transfer Bank - Completed", "- \$47.5",Colors.red),
                   _listTile("Cameron Williamson", "Preapproved Payment - Completed", "+ \$86.5",Colors.green),
+                  _listTile("Dianne Russell", "Transfer Bank - Completed", " - \$66.5",Colors.red),
+                  _listTile("Dianne Russell", "Transfer Bank - Completed", " - \$66.5",Colors.red),
+                  _listTile("Dianne Russell", "Transfer Bank - Completed", " - \$66.5",Colors.red),
                   _listTile("Dianne Russell", "Transfer Bank - Completed", " - \$66.5",Colors.red),
 
                 ],
@@ -133,7 +134,10 @@ class _SecondPageState extends State<SecondPage> {
 
    _buildMenu(IconData icon,String title){
     return  Container(
+      //alignment: Alignment.center,
       child: Column(
+        //mainAxisSize: MainAxisSize.min,
+        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             width:60,

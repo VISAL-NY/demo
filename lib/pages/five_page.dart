@@ -33,7 +33,7 @@ class _FivePageState extends State<FivePage> {
                      Padding(
                        padding: const EdgeInsets.all(10.0),
                        child: ClipRRect(
-                         borderRadius: BorderRadius.circular(50),
+                         borderRadius: BorderRadius.circular(100),
                          child: Container(
                            width: 80,
                            height: 80,
@@ -122,7 +122,7 @@ class _FivePageState extends State<FivePage> {
                        padding: const EdgeInsets.only(left: 10),
                        child: Container(
                          alignment: Alignment.topLeft,
-                         child: Text("Payment Type",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                         child: Text("Payment Type",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                        ),
                      ),
                      // DropdownButtonFormField(items: ["Item1","Item2"].map<DropdownMenuItem<String>>(String(){}), onChanged: (value){
@@ -149,14 +149,14 @@ class _FivePageState extends State<FivePage> {
                        padding: const EdgeInsets.only(left: 10),
                        child: Container(
                          alignment: Alignment.topLeft,
-                         child: Text("Note",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                         child: Text("Note",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                        ),
                      ),
                      Padding(
                        padding: const EdgeInsets.only(left: 10),
                        child: Container(
                          alignment: Alignment.topLeft,
-                         child: Text("Thank you for your hard work on this project. We look forward to working with you again in the future.",style: TextStyle(fontSize: 18,height: 1.5),),
+                         child: Text("Thank you for your hard work on this project. We look forward to working with you again in the future.",style: TextStyle(fontSize: 14,height: 1.5),),
                        ),
                      ),
                    ],

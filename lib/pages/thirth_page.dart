@@ -38,7 +38,7 @@ class _ThirdthPageState extends State<ThirdthPage> {
                             },
                             child: ListTile(
                               leading: ClipRRect(
-                                borderRadius: BorderRadius.circular(50),
+                                borderRadius: BorderRadius.circular(100),
                                 child: Container(
                                   color: Colors.blueAccent,
                                   width: 60,
@@ -46,10 +46,10 @@ class _ThirdthPageState extends State<ThirdthPage> {
                                   child: Image.asset(peoplelist[index].image,fit: BoxFit.cover,),
                                 ),
                               ),
-                              title: Text(peoplelist[index].name,style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+                              title: Text(peoplelist[index].name,style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),),
                               subtitle: Padding(
                                 padding: const EdgeInsets.only(top: 3),
-                                child: Text(peoplelist[index].email,style: TextStyle(fontSize: 13),maxLines: 1,softWrap: false,overflow: TextOverflow.ellipsis,),
+                                child: Text(peoplelist[index].email,style: TextStyle(fontSize: 12),maxLines: 1,softWrap: false,overflow: TextOverflow.ellipsis,),
                               ),
                               trailing: IconButton(icon:Icon(Icons.favorite_border_outlined),
                               onPressed: (){
@@ -111,10 +111,10 @@ class _ThirdthPageState extends State<ThirdthPage> {
                     indicatorWeight: 3,
                     tabs: [
                       Tab(
-                        child: Text("All Contact",style: TextStyle(color:_selected==0?Colors.blueAccent:Colors.grey,fontSize: 18,fontWeight: FontWeight.bold),),
+                        child: Text("All Contact",style: TextStyle(color:_selected==0?Colors.blueAccent:Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),),
                       ),
                       Tab(
-                        child: Text("Favorite",style: TextStyle(color:_selected==1?Colors.blueAccent:Colors.grey,fontSize: 18,fontWeight: FontWeight.bold),),
+                        child: Text("Favorite",style: TextStyle(color:_selected==1?Colors.blueAccent:Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),),
                       ),
 
                     ],
